@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JUST STRETCH</title>
+  <link rel=stylesheet href=style.css>
+  <link rel=icon href=assets/logo.png type="image/png">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Camera video element -->
+    <video id="input_video"></video>
+
+    <!-- Main window -->
+    <div class="container opaque" id="mainContainer">
+        <!-- Logo, score and settings -->
+        <div id=left_container>
+            <!-- <img src=assets/logo.png id=logo>\ -->
+            <!-- Joselin -->
+            <br><br>
+            <!-- <button class="play" onclick='openMenu()'>JUGAR</button> -->
+            <!-- <button class="stop" onclick='stopGame()'>PARAR</button> -->
+            <br><br>
+            <!-- Joselin -->
+
+            <div id="progress-container">
+                <p>Porcentaje de la canción</p>
+                <div id="progress-bar"></div>
+                <div id="progress-text">0%</div>
+            </div>
+
+            <button id="pausar" onclick="refresh();"> Cambiar de canción </button>
+            <!-- <button id="pause-button">Pausa</button> -->
+            <!-- <button onclick='openSettings()'>settings</button> -->
+
+            
+
+            <br><br>
+            <!-- <p style="color:rgb(59, 101, 150)">COMPUTER SCIENCE - UNSA - IHC</p> -->
+        </div>
+
+        <!-- Game block -->
+        <div id=arrow_container>
+            <img src=assets/circles.png style="position:absolute;bottom:0;left:0;width:100%;">
+            <div id=arrow_parent style="display:contents">
+            </div>
+        </div>
+
+        
+        <!-- Video output -->
+        
+        <div id="output_wrapper_wrapper">
+            <h2><img src="./assets/music.png" style="max-width: 45px; margin-right: 5px; vertical-align: middle;"><span id=song style="color:white"></span></h2>
+            <div id="output_wrapper">
+                <canvas id="output_canvas" width=1280 height=720></canvas>
+            </div>
+            <h3 style="color:white; ; visibility: hidden;">Gestos realizados 👆 <span id=gesture style="color:white; visibility: hidden;">Cargando</span></h3>    
+            <h1>Puntaje: <span id=score style="color:white">0</span></h1>
+        </div>
+    </div>
+
+    <!-- Song selection -->
+    <div id=select>
+        <!-- <div class="close-button" onclick="closeMenu()">X</div> -->
+        <h1 id="bienvenido">Bienvenido!</h1>
+        <p id="style-last-score">Ultimo Puntaje final logrado: <span id=last-score style="color:white; font-size: 60px;">0</span></p>
+        
+        <center>
+        <img src="./assets/tutorial2.gif" width="500" alt="">
+        <img src="./assets/inst.png" width="150" height="342px" alt="">
+        </center>
+        <h2><img src="./assets/music.png" alt="" style="max-width: 35px; margin-right: 5px; vertical-align: middle;">Seleccione una canción:</h2>
+            
+    
+        
+        <div id="song-button-container">
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="track">
+        <source id="track-source" src="" type="audio/mp3">
+    </audio>
+
+    <!-- Pose estimation -->
+    <script src=scripts/pose.js></script>
+
+    <!-- Song track files -->
+    <script src=songs/the_builder3.js></script>
+    <script src=songs/arroz_con_pollo.js></script>
+    <script src=songs/cold_funk.js></script>
+    <script src=songs/welcome_to_the_show.js></script>
+    <script src=songs/desert_of_lost_souls.js></script>
+    <script src=songs/voxel_revolution.js></script>
+    <script src=songs/airship_serenity.js></script>
+    <script src=songs/maple_leaf_rag.js></script>
+    <script src=songs/living_voyage.js></script>
+
+    <script src=scripts/select.js></script>
+
+    <!-- DDR game -->
+    <script src=scripts/ddr.js></script>
+
+    <!-- Splash screen -->
+    <div id=splash></div>
+</body>
+</html>

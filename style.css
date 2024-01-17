@@ -1,0 +1,434 @@
+/* LAYOUT */
+#progress-bar {
+    width: 0;
+    height: 50px;
+    background-color: #4CAF50; /* Green color */
+}
+
+#progress-text{
+    font-size: 80px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+
+#progress-container{
+    padding-bottom: 50px;
+}
+
+#style-last-score{
+    font-size: 30px;
+    color: white;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-image: url("./assets/wallpapers.png");
+	overflow: hidden;
+	font-family: "Cascadia Code", "Trebuchet MS", Futura, monospace;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 25% 30% 45%;
+	height: 100%;
+	width: 100%;
+	place-items: center;
+}
+
+.container.opaque {
+	opacity: 0.2;
+	transition: opacity 1s ease;
+}
+
+.close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 40px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+}
+
+.close-button:hover {
+	text-shadow: 0 0 10px white;
+}
+
+#bienvenido{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+#left_container {
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+	padding: 10px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#left_container button {
+	/*background-color: #00FF00;*/
+	padding: 15px 32px;
+	font-family: "Cascadia Code", "Trebuchet MS", Futura, monospace;
+	font-size: 22pt;
+	font-weight: bold;
+	margin: 10px;
+	color: #ffffff;
+	cursor: pointer;
+	display: block;
+	border-radius: 10px;
+	margin-left: 0px;
+	border: 2px solid transparent;
+}
+
+/* Estilo para el primer nuevo botón y su estado hover */
+#left_container button.play {
+	background-color: #00FF00;
+	/*border: 4px solid #00FF00;*/
+}
+
+#left_container button.play:hover {
+	/*background-color: #333; /* Cambia el color de fondo en hover */
+	/*color: #00FF00; /* Cambia el color del texto en hover */
+	box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+	transition: all 0.2s ease;
+}
+
+/* Estilo para el segundo nuevo botón y su estado hover */
+#left_container button.stop {
+	background-color: #FF0000;
+	/*border: 4px solid #FF0000;*/
+}
+
+#left_container button.stop:hover {
+	box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+	transition: all 0.2s ease;
+}
+
+
+
+/* VIDEO */
+
+#input_video {
+	display: none;
+	/*width:100%;
+    transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);*/
+}
+
+#output_wrapper_wrapper {
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+	padding: 40px;
+}
+
+#output_wrapper {
+	width: 100%;
+	position: relative;
+}
+
+#output_canvas {
+	border: 10px solid #0a3e5c;
+	width: 100%;
+	height: 100%;
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	border-radius: 10px;
+}
+
+/* GAME */
+
+#arrow_container {
+	width: 100%;
+	height: 100%;
+	background-image: url("assets/background.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	image-rendering: pixelated;
+	position: relative;
+}
+
+.arrow {
+	position: absolute;
+	bottom: 100%;
+	transition: bottom 4s linear;
+	width: 23%;
+	image-rendering: pixelated;
+}
+
+.message {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: "Cascadia Code", "Trebuchet MS", Futura, monospace;
+	font-size: 30pt;
+	color: #ffffff;
+	opacity: 1;
+	transition: 1s all linear;
+	text-align: center;
+}
+
+.large-message {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: "Cascadia Code", "Trebuchet MS", Futura, monospace;
+	font-size: 50pt;
+	color: #7dbfeb;
+	opacity: 1;
+	transition: 1s all linear;
+	text-align: center;
+}
+
+.cloud {
+	position: absolute;
+	bottom: -5%;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+	transition: 1s all linear;
+	width: 25%;
+	image-rendering: pixelated;
+}
+
+/* MISC */
+
+#logo {
+	width: 60%;
+}
+
+#songname {
+	border: 4px solid #c7c7c7;
+	background-color: #ffffff;
+	padding: 10px;
+	font-size: 14pt;
+	margin: 10px;
+	color: #000000;
+	cursor: pointer;
+	display: block;
+	border-radius: 10px;
+}
+
+/* TEXT */
+
+h1 {
+	font-size: 4rem;
+	color: #9ad9fd;
+}
+
+h2 {
+	font-size: 30pt;
+	color: #57bbf5;
+}
+
+p {
+	font-size: 10pt;
+	color: #ffffff;
+}
+
+label,
+input[type="checkbox"] {
+	font-family: "Cascadia Code", "Trebuchet MS", Futura, monospace;
+	font-size: 14pt;
+	color: #ffffff;
+}
+
+label {
+	display: block;
+}
+
+/* SELECT */
+button {
+	border: 4px solid #1c88c7;
+	background-color: #0f3c4e;
+	padding: 10px;
+	font-family: "Cascadia Code", "Trebuchet MS", Futura, monospace;
+	font-size: 14pt;
+	margin: 10px;
+	color: #ffffff;
+	cursor: pointer;
+	display: block;
+	border-radius: 10px;
+	margin-left: 0px;
+}
+
+button:hover {
+	background-color: #12475c;
+}
+
+#select,
+#settings,
+#custom {
+	/* position: fixed;
+	transform: translate(-50%, -50%);
+	border: 5px solid #126da1;
+	background-color: #023144;
+	left: 50%;
+	top: 50%;
+	padding: 30px;
+	box-shadow: 0px 0px 100px 60px #0e2731;
+	max-width: 50%;
+	border-radius: 10px;
+	transition: 2s top;
+	color: white; */
+
+    position: fixed;
+	transform: translate(-50%, -50%);
+	border: 5px solid #45bcf8;
+	background-color: #023144;
+	left: 50%;
+	top: 50%;
+	padding: 30px;
+	box-shadow: 0px 0px 40px #03f;
+	/*box-shadow: 0px 0px 100px 60px #0e2731;*/
+	max-width: 50%;
+	border-radius: 10px;
+	transition: 2s top;
+	color: white;
+}
+
+hr {
+	border: none;
+	border-bottom: 2px solid #0d4b6e;
+	margin-top: 10px;
+}
+
+#select button {
+	display: inline-block;
+}
+
+#settings button {
+	margin: 2px;
+	display: inline-block;
+}
+
+input[type="file"] {
+	color: white;
+	font-size: 12pt;
+	font-family: "Cascadia Code", "Trebuchet MS", Futura, monospace;
+}
+
+input[type="file"]::file-selector-button {
+	border: 4px solid #62b6e7;
+	background-color: #1a5f7a;
+	border-radius: 10px;
+	padding: 5px;
+	color: white;
+	font-size: 12pt;
+	margin-right: 10px;
+	font-family: "Cascadia Code", "Trebuchet MS", Futura, monospace;
+}
+
+#custom button {
+	display: inline-block;
+	margin-left: 0px;
+}
+
+a {
+	font-size: 14pt;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+input[type="range"] {
+	background-color: rgba(255, 255, 255, 0.26);
+}
+
+/* SPLASH */
+#splash {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: url("assets/splash.gif");
+	background-position: center;
+	background-size: cover;
+	
+}
+
+/* Botones de las canciones*/
+#song-button-container {
+	display: flex;
+	justify-content: space-around; /* Espaciado entre niveles */
+}
+
+.level1{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.level1 h2 {
+	font-size: 20pt;
+	color: yellow;
+}
+
+.level2{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.level2 h2 {
+	font-size: 20pt;
+	color: greenyellow;
+}
+
+.level3{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.level3 h2 {
+	font-size: 20pt;
+	color: orangered;
+}
+
+#song-button-container button {
+	margin: 5px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#song-button-container button.column1  {
+	background-color: #0f3c4e;
+	color: white;
+	border: 4px solid yellow;
+}
+#song-button-container button.column1:hover {
+	box-shadow: 0 4px 16px yellow;
+	transition: all 0.2s ease;
+}
+
+#song-button-container button.column2  {
+	background-color: #0f3c4e;
+	color: white;
+	border: 4px solid greenyellow;
+}
+#song-button-container button.column2:hover {
+	box-shadow: 0 4px 16px greenyellow;
+	transition: all 0.2s ease;
+}
+
+#song-button-container button.column3 {
+	background-color: #0f3c4e;
+	color: white;
+	border: 4px solid orangered;
+}
+#song-button-container button.column3:hover {
+	box-shadow: 0 4px 16px orangered;
+	transition: all 0.2s ease;
+}
