@@ -32,8 +32,8 @@
                 <div id="progress-bar"></div>
                 <div id="progress-text">0%</div>
             </div>
-
-            <button id="pausar" onclick="refresh();"> Cambiar de canción </button>
+            <h1>Puntaje: <span id=score style="color:white">0</span></h1>
+            <!-- <button id="pausar" onclick="refresh();"> Cambiar de canción </button> -->
             <!-- <button id="pause-button">Pausa</button> -->
             <!-- <button onclick='openSettings()'>settings</button> -->
 
@@ -52,15 +52,14 @@
 
         
         <!-- Video output -->
-        
         <div id="output_wrapper_wrapper">
             <h2><img src="./assets/music.png" style="max-width: 45px; margin-right: 5px; vertical-align: middle;"><span id=song style="color:white"></span></h2>
+            <button id="pausar" onclick="refresh();"> Cambiar de canción </button>
             <div id="output_wrapper">
                 <canvas id="output_canvas" width=1280 height=720></canvas>
             </div>
             <h3 style="color:white; ; visibility: hidden;">Gestos realizados 👆 <span id=gesture style="color:white; visibility: hidden;">Cargando</span></h3>    
-            <h1>Puntaje: <span id=score style="color:white">0</span></h1>
-        </div>
+        </div> 
     </div>
 
     <!-- Song selection -->
