@@ -27,7 +27,7 @@ let songs = {
 // }
 
 const levels = [[], [], []];
-
+const button =[];
 let levelIndex = 0;
 for (let song_name of Object.keys(songs)) {
     levels[levelIndex].push(song_name);
@@ -45,6 +45,7 @@ levels.forEach((level, index) => {
     level.forEach(song_name => {
         const button = document.createElement("button");
         button.textContent = song_name;
+        button.onmouseover = () => playOnHover(song_name);
         button.onclick = () => selectSong(song_name);
         button.classList.add(`column${index + 1}`);
         levelDiv.appendChild(button);
@@ -53,7 +54,11 @@ levels.forEach((level, index) => {
     songElem.appendChild(levelDiv);
 });
 
-
+function playOnHover(song)
+{
+    audio.src = songs[song][1];
+    audio.play();
+}
 
 function selectSong(song){
     console.log(playing);
